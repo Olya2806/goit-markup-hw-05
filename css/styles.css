@@ -9,6 +9,7 @@
   --footer-bgc-color: #2f303a;
   --secondary-bcg-color: #f5f4fa;
   --icons-color: #AFB1B8;
+  --transition-time: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 h1,
@@ -95,9 +96,7 @@ body {
   letter-spacing: 0.02em;
   text-decoration: none;
 
-    transition-property: color;
-    transition-duration: 250ms;
-    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1)
+  transition: color var(--transition-time);
 }
 .site-nav .link:hover,
 .site-nav .link:focus {
@@ -115,7 +114,9 @@ body {
   position: absolute;
   background: #2196F3;
     border-radius: 2px;
+
 }
+
 
 /* auth nav*/
 .auth-nav {
@@ -137,9 +138,7 @@ body {
   letter-spacing: 0.02em;
   text-decoration: none;
 
-  transition-property: color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+  transition: color var(--transition-time);
 }
 
 .auth-nav .link:hover,
@@ -331,9 +330,9 @@ body {
   align-items: center;
   justify-content: center;
   fill: var(--icons-color);
-  transition-property: color, background-color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+
+  transition: color var(--transition-time),
+      background-color var(--transition-time);
 }
 .socnetworks-icon {
   color: currentColor;
@@ -365,9 +364,8 @@ body {
   border-radius: 4px;
   color: var(--icons-color);
 
-  transition-property: color, border;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+  transition: color var(--transition-time),
+      border var(--transition-time);
 }
 
 .icon-logo {
@@ -395,9 +393,9 @@ body {
   border-radius: 4px;
   border: none;
 
-  transition-property: color, background-color,box-shadow;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+  transition: color var(--transition-time), 
+  background-color var(--transition-time),
+   box-shadow var(--transition-time);
 }
 
 .button:hover,
@@ -444,9 +442,7 @@ body {
 .projects .item {
   width: 370px;
 
-    transition-property: box-shadow;
-      transition-duration: 250ms;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+  transition: box-shadow var(--transition-time);
 }
 
 .projects .item:hover, .projects .item:focus{
@@ -478,6 +474,7 @@ body {
   overflow: hidden;
 }
 
+
 .projects-link:hover .projects-example-text, .projects-link:focus .projects-example-text{
   opacity: 1;
 transform: translateY(0%);
@@ -497,8 +494,8 @@ transform: translateY(0%);
 
     transform: translateY(100%);
       opacity: 0;
-      transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform var(--transition-time),
+        opacity var(--transition-time);
 }
 
 /* address */
@@ -513,9 +510,7 @@ transform: translateY(0%);
   color: var(--address-link-color);
   text-decoration: none;
 
-  transition-property: color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+  transition: color var(--transition-time);
 }
 
 .address-list .first-item {
@@ -571,9 +566,8 @@ transform: translateY(0%);
   background-color: rgba(255, 255, 255, 0.1);
   fill: var(--primary-white-color);
 
-  transition-property: color,background-color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-time),
+  background-color var(--transition-time);
     
 }
 .footer-icon {
@@ -583,6 +577,51 @@ transform: translateY(0%);
 .footer-link:hover, .footer-link:focus {
   background-color: var(--accent-colour);
   fill: var(--primary-white-color);
+}
+
+/* backdrop */
+.backdrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+
+  transition: opacity var(--transition-time);
+}
+.backdrop.is-hidden{
+  opacity: 0;
+  pointer-events: none;
+  visibility: ;
+}
+.backdrop.is-hidden .modal{
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.modal{
+  min-width: 528px;
+  min-height: 581px;
+  background-color: var(--primary-white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform var(--transition-time);
+}
+.modal-close-button{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .visually-hidden {
