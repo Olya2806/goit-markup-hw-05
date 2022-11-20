@@ -614,6 +614,9 @@ transform: translateY(0%);
   transition: transform var(--transition-time);
 }
 .modal-close-button{
+  position: absolute;
+  top: 8px;
+  right: 8px;
   width: 30px;
   height: 30px;
   border-radius: 50%;
