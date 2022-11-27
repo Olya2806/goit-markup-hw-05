@@ -331,7 +331,7 @@ body {
   justify-content: center;
   fill: var(--icons-color);
 
-  transition: color var(--transition-time),
+  transition: fill var(--transition-time),
       background-color var(--transition-time);
 }
 .socnetworks-icon {
@@ -360,7 +360,7 @@ body {
   width: 100%;
   height: 100%;
   padding: 16px 32px;
-  border: 1px solid var(--primary-text-color);
+  border: 1px solid var(--icons-color);
   border-radius: 4px;
   color: var(--icons-color);
 
@@ -566,7 +566,7 @@ transform: translateY(0%);
   background-color: rgba(255, 255, 255, 0.1);
   fill: var(--primary-white-color);
 
-  transition: color var(--transition-time),
+  transition: fill var(--transition-time),
   background-color var(--transition-time);
     
 }
@@ -594,8 +594,8 @@ transform: translateY(0%);
 .backdrop.is-hidden{
   opacity: 0;
   pointer-events: none;
-  visibility: ;
 }
+
 .backdrop.is-hidden .modal{
   transform: translate(-50%, -50%) scale(1.2);
 }
